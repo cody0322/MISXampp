@@ -3,26 +3,33 @@
 session_start();
 require_once 'connect.php';
 include('connect.php');
+header("Content-Type: text/html; charset=utf8");
+if(!isset($_POST['submit'])){
+    exit("錯誤執行");
+}
+$year = $_POST['year'];
+$school_name = $_POST['school_name'];
+$sql = "SELECT * FROM $year WHERE `school_name` = '$school_name'";
+// $sql = "SELECT * FROM year110 WHERE `school_name` = '國立中興大學'";
 
-$p_number = "Select sn From user Where username = '$_COOKIE[c_account]'";
-$result = mysqli_query($link,$p_number);//執行sql
-$rows=mysqli_fetch_row($result);
-$pidnumber = $rows[0];//儲存會員id
-// echo
-//     $rows[0].
-//     $pidnumber;
-// $user_sn = $_COOKIE['c_account'];
-// $user_sn = $_SESSION['sn'];
-$sql = "SELECT * FROM record where id = '$pidnumber'";
 $retval = mysqli_query( $link , $sql); 
-// $sn = getenv("REMOTE_ADDR");
-// echo "$sn"; 
+
+
+// echo
+//     $year
+
 while($row = mysqli_fetch_array($retval)) {
     
     echo 
-        "使用者代號 :{$row['id']}  <br> ".
-        "金額 : {$row['cash']} <br> ".
-       "項目 : {$row['itemname']} <br> ".
+       "學校 :{$row['school_name']}  <br> ".
+       "醫學系 : {$row['medical_science']} <br> ".
+       "牙醫學系 : {$row['dentist']} <br> ".
+       "醫學院 : {$row['medical']} <br> ".
+       "工學院 : {$row['institute']} <br> ".
+       "理農學院 : {$row['College_of_Agriculture']} <br> ".
+       "商學院 : {$row['schools']} <br> ".
+       "文法學院 : {$row['Grammar_School']} <br> ".
+       "其他 : {$row['items']} <br> ".
        "--------------------------------<br>";
     
  }
