@@ -10,15 +10,15 @@
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.2.0-beta1/css/bootstrap.min.css ">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.14.0-beta3/css/bootstrap-select.min.css">
-  {% comment %} <link rel="stylesheet" href="bootstrap.min.css"/> {% endcomment %}
-  {% comment %} <link rel="stylesheet" href="bootstrap-select.min.css"/> {% endcomment %}
+  <!-- <link rel="stylesheet" href="bootstrap.min.css"/> -->
+  <!-- <link rel="stylesheet" href="bootstrap-select.min.css"/> -->
   <link rel="stylesheet" href="body.css"/> 
   <link rel="stylesheet" href="main.css"/> 
   
 </head>
 <body>
 <form action="testserach.php" method="POST">
-  {% comment %} {% csrf_token %} {% endcomment %}
+  <!--{% csrf_token %} {% endcomment %} -->
   <section>
     <div class="container">
       <div class="Left">
@@ -228,13 +228,60 @@
 
             </select>
           </div>
+          
+   
+          <!-- 學校類別 
+          <div class="group">
+            <label class="title">日間學制學士班學雜費收費基準</label>
+            <div class="multi_select_box">
+              <select 
+               id="cate-selected"
+               name="program_category" 
+               class="form-control"
+              > 
+               <option>醫學系</option>
+               <option>牙醫學系</option>
+              </select>
+              <small class="form-text text-muted">請選擇學系 </small><br>
+            </div>
+          </div> 
+          -->
+
+          <!--熱門詞多少個?form group
+          <div class="group">
+            <label class="">多少個熱門詞?</label>
+            <div class="multi_select_box">
+              <input
+                id="topk-selected"
+                name="topk"
+                value="10"
+                class="form-control form-control-success"
+              />
+              <small class="form-text text-muted">內定值為10 </small>
+            </div>
+          </div>熱門-->
+       
+
+
         </div>
       
-        <button name="submit" style="margin-top:10px">查詢</button>
+        <button name="submit" style="margin-top:10px" class="btn btn-primary">查詢</button>
       </form>
       </div>
       
-      <div class="Right"></div>
+      <div class="Right">
+        <div class="form-group row">
+          <div class="col-md-9 ml-auto"><a href="http://127.0.0.1:8000/tuition/" style="text-decoration:none" >
+            <button type="button" id="btn-ok" class="btn btn-primary">
+              圖表
+            </button>
+          </div></a>
+        </div>
+
+
+      
+
+      </div> <!--Right-->
     </div>
   </section>
 
@@ -245,8 +292,7 @@
 
   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-  {% comment %} <script type="module" src="ionicons.js"></script> {% endcomment %}
-  {% comment %} <script nomodule src="ionicons.esm.js"></script> {% endcomment %}
+
 
   <script src="jquery.min.js"></script>
   <script src="bootstrap.bundle.min.js"></script>
@@ -268,3 +314,122 @@
   </script>
 </body>
 </html>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.min.js"></script>
+  
+<script>
+    
+    callAjax();
+
+    $('#cate-selected').on('change', function () {
+      callAjax();
+    }); //event function
+
+    $('#btn-ok').on('click', function () {
+      callAjax();
+    }); //event function
+
+    function callAjax() {
+        let cate = $('#cate-selected').val();
+        //console.log(topk);
+        
+        let topk = $('#topk-selected').val();
+        //console.log(topk);
+
+        $.ajax({
+            type: "POST",
+
+            url: "/tuition/api_get_year_tuition/",
+
+            data: {
+                "program_category": cate,
+                "topk": topk
+            },
+            success: function (received) {
+                //console.log(received);
+                let chart_data = received.chart_data;
+                let wf_pairs = received.wf_pairs;
+                console.log(wf_pairs)
+                showTopKeys(wf_pairs);
+                showChart(chart_data);
+            } //success function
+        }); //ajax
+    } //callAjax
+
+    //* 顯示關鍵詞資料函數
+    function showTopKeys(items) {
+        //先清除前一次的資料
+        $('#tokeys').empty();
+
+        //將內容加上li標籤附加起來，顯示在顯示區"fees"
+        for (let i = 0; i < items.length; i++) {
+            let item_li = "<li>" + items[i] + "</li>";
+            $('#topkeys').append(item_li);
+        }
+    } //function
+
+    //**繪圖函數showChart()
+    function showChart(chart_data) {
+
+        // 畫圖需要的數據資料
+        let values = chart_data.values;
+        let labels = chart_data.labels;
+        let category = chart_data.category;
+
+        //第1個變數: 餵給chart的資料
+        let data = {
+            labels: labels,
+            datasets: [{
+                label: category,
+                data: values,
+                backgroundColor: randomColors(values.length),
+                borderColor: randomColors(values.length),
+                borderWidth: 1,
+            }],
+        };
+
+        //第2個變數: chart的選項  指定y坐標軸從零開始顯示
+        let options = {
+            scales: {
+                yAxes: [{
+                    ticks: {
+                        beginAtZero: true
+                    }
+                }]
+            },
+        };
+
+        //取得在前面html區域欲顯示的圖代號
+        let canvas_mychrat = document.getElementById("mychart");
+
+        if (window.barchart) {
+            barchart.destroy();
+        }
+
+        barchart = new Chart(canvas_mychrat, {
+            type: 'bar',
+            data: data,
+            options: options,
+        });
+
+
+        //** 產生隨機顏色
+        function randomColors(num_colors) {
+            let colors = [];
+
+            for (i = 0; i < num_colors; i++) {
+
+                let r = Math.floor(Math.random() * 255);
+                let g = Math.floor(Math.random() * 255);
+                let b = Math.floor(Math.random() * 255);
+                let rgb = `rgba(${r},${g},${b},0.5)` // (red, green, blue, alfa) alfa透明度
+
+                colors.push(rgb);
+            }
+            return colors;
+        }
+
+
+    }
+
+</script>

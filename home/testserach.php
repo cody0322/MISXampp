@@ -76,7 +76,7 @@ $school_name = $_POST['school_name'];
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>查詢結果</title>
     
-    <button name="home" style="margin-top:10px"><a href="home.html">首頁</button></a>
+    <a href="home.html"><button name="home" style="margin-top:10px"class="btn btn-primary">首頁</button></a>
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.2.0-beta1/css/bootstrap.min.css ">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.14.0-beta3/css/bootstrap-select.min.css">
