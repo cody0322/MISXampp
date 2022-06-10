@@ -1,0 +1,258 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:100,200,300,400,500,600,700,800,900');
+
+@import url('https://fonts.googleapis.com/css2?family=Kaisei+Tokumin:wght@700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+div {
+    display: block;
+}
+
+
+/* body{
+    display: flex;
+    justify-content: center;
+    min-height: 100vh;
+    background-color: aquamarine;
+} */
+body {
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: radial-gradient(ellipse at center, #F79C06 80%, #FFBC7E 100%);
+    background-size: 250% 250%;
+    position: relative;
+}
+
+section {
+
+    justify-content: center;
+    align-items: center;
+
+}
+
+
+.container {
+    margin-top: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+.container .main {
+
+    width: 350px;
+    height: 550px;
+    background: #f3553c;
+    z-index: 1;
+    padding: 40px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    box-shadow: 0 20px 25px rgba(0, 0, 0, 0.15);
+    border-radius: 25px;
+    border: 2px solid #eeb3a3;
+}
+
+
+.container .main .group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 5px 0;
+}
+
+.container .main .group .title {
+    display: flex;
+    width: 100%;
+    height: 40px;
+    color: #fff;
+    font-size: 1.5em;
+    font-weight: 1000;
+    align-items: center;
+    justify-content: center;
+    padding: 2px;
+    margin-bottom: 5px;
+}
+
+/* .none{
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select:none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+} */
+.submit {
+    width: 100%;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+
+}
+
+.noselect {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.noselect {
+    width: 150px;
+    height: 50px;
+    background: none;
+    border: 2px solid #eeb3a3;
+    border-radius: 50px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 500ms;
+}
+
+.noselect>span,svg {
+    position: absolute;
+    color: #fff;
+    fill: transparent;
+}
+
+.noselect:hover {
+    font-size: 14px;
+}
+
+.noselect:focus {
+    outline: none;
+    border: 2px solid transparent;
+    width: 50px;
+    border-left: 2px solid #eeb3a3;
+    border-bottom: 2px solid #eeb3a3;
+    animation: spin 2s 500ms forwards;
+}
+
+.noselect:focus span {
+    color: transparent;
+}
+
+.noselect:focus svg {
+    animation: check 500ms 2300ms forwards;
+}
+
+@keyframes spin {
+    80% {
+        border: 2px solid transparent;
+        border-left: 2px solid #eeb3a3;
+    }
+
+    100% {
+        transform: rotate(1080deg);
+        border: 2px solid #eeb3a3;
+    }
+}
+
+@keyframes check {
+    to {
+        fill: #eeb3a3;
+    }
+}
+
+@keyframes circle {
+    to {
+        border: 2px solid #eeb3a3;
+    }
+}
+
+
+.top{
+    font-family: 'Kaisei Tokumin', serif;
+    top: 10px;
+    font-style: italic;
+}
+#college{
+    position: absolute;
+    z-index: 1000;
+    left: 10%;
+}
+#money{
+    position: absolute;
+    z-index: 1000;
+    right: 10%;
+}
+
+/* .none {
+    width: 150px;
+    height: 50px;
+    background: none;
+    border: 2px solid #932e3e;
+    border-radius: 50px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: .4s;
+    margin-top: 5px;
+}
+
+.none:hover {
+    width: 170px;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.4);
+}
+
+.none>span,
+svg {
+    position: absolute;
+    color: #932e3e;
+    fill: transparent;
+    transition: .4s;
+}
+
+.none:hover span {
+    transition: .4s;
+    font-size: 16px;
+}
+
+.none:focus {
+	outline: none;
+	border: 2px solid transparent;
+	width: 50px;
+	border-left: 2px solid #89db84;
+	border-bottom: 2px solid #89db84;
+	animation: spin 2s 500ms forwards;
+}
+
+.none:focus span {
+	color: transparent;
+}
+
+.none:focus svg {
+	animation: check 500ms 2300ms forwards;
+}
+
+@keyframes spin {
+	80%{border: 2px solid transparent;
+			border-left: 2px solid #89db84;}
+	100%{transform: rotate(1080deg);
+		border: 2px solid #89db84;}
+}
+
+@keyframes check {
+	to{fill: #89db84}
+}
+
+@keyframes circle {
+	to{border: 2px solid #89db84;}
+} */

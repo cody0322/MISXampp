@@ -1,0 +1,26 @@
+/*   這是整個會蓋住畫面的底色色塊  */
+body{
+    color: #fff;
+}
+
+#preloader {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    left: 0%;
+    top: 0%;
+    background-color: #fff;
+    opacity: 0.8    ;
+    z-index: 9999;
+}
+
+#status {
+    background:url(../images/preloader.gif) no-repeat center center;
+    background-size: 10%;
+    height: 100vh;
+    width: 100%;
+    position: fixed;
+    z-index: 1000;
+
+}
+
