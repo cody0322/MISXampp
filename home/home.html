@@ -23,9 +23,20 @@
 
 
 
+<<<<<<< HEAD
+=======
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.2.0-beta1/css/bootstrap.min.css ">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.14.0-beta3/css/bootstrap-select.min.css">
+  <!-- <link rel="stylesheet" href="bootstrap.min.css"/> -->
+  <!-- <link rel="stylesheet" href="bootstrap-select.min.css"/> -->
+  <link rel="stylesheet" href="body.css"/> 
+  <link rel="stylesheet" href="main.css"/> 
+  
+>>>>>>> 52e41831cbbdd8634ae2e5eafac004b70f2f4a90
 </head>
 
 <body>
+<<<<<<< HEAD
   <div id="preloader">
     <div id="status"></div>
   </div>
@@ -265,6 +276,276 @@
       </div>
     </section>
   </form>
+=======
+<form action="testserach.php" method="POST">
+  <!--{% csrf_token %} {% endcomment %} -->
+  <section>
+    <div class="container">
+      <div class="Left">
+      
+        <!-- 學年 -->
+        <div class="group">
+          <div class="title">學年度</div>
+          <div class="multi_select_box">
+            <select multiple title="請選擇學年度" name="year[]" type="year[]" id="year[]" class="multi_select w-100%" multiple data-selected-text-format="count > 5" multiple data-actions-box="true">
+                <option value="year106">106</option>
+                <option value="year107">107</option>
+                <option value="year108">108</option>
+                <option value="year109">109</option>
+                <option value="year110">110</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- 設立別 -->
+        <div class="group">
+          <div class="title">設立別</div>
+          <div class="multi_select_box">
+            <select multiple title="請選擇公私立" name="select_AB" type="select_AB" id="" class="multi_select w-100%" multiple data-selected-text-format="count > 5" multiple data-actions-box="true">
+                <option value="A">公立</option>
+                <option value="B">私立</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- 學校類別 -->
+        <div class="group">
+          <div class="title">學制</div>
+          <div class="multi_select_box">
+            <select multiple title="請選擇學制" name="school_system" type="school_system" id="school_system" class="multi_select w-100%" multiple data-selected-text-format="count > 5" multiple data-actions-box="true">
+                <option value="">一般大學</option>
+                <option value="">技專學校</option>
+                <option value="">宗教研修學校</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- 學校名稱 -->
+        <div class="group">
+          <div class="title">學校名稱</div>
+          <div class="multi_select_box">
+            <select multiple title="請選擇學校" name="school_name[]" type="school_name[]" id="school_name[]" class="multi_select w-100%" multiple data-selected-text-format="count > 5" multiple data-actions-box="true" data-live-search="true">
+
+              <option value="國立清華大學">國立清華大學</option>
+              <option value="國立臺灣大學">國立臺灣大學</option>
+              <option value="國立臺灣師範大學">國立臺灣師範大學</option>
+              <option value="國立成功大學">國立成功大學</option>
+              <option value="國立中興大學">國立中興大學</option>
+              <option value="國立陽明交通大學">國立陽明交通大學</option>
+              <option value="國立中央大學">國立中央大學</option>
+              <option value="國立中山大學">國立中山大學</option>
+              <option value="國立臺灣海洋大學">國立臺灣海洋大學</option>
+              <option value="國立中正大學">國立中正大學</option>
+              <option value="國立高雄師範大學">國立高雄師範大學</option>
+              <option value="國立彰化師範大學">國立彰化師範大學</option>
+              <option value="國立臺北大學">國立臺北大學</option>
+              <option value="國立嘉義大學">國立嘉義大學</option>
+              <option value="國立高雄大學">國立高雄大學</option>
+              <option value="國立東華大學">國立東華大學</option>
+              <option value="國立暨南國際大學">國立暨南國際大學</option>
+              <option value="國立臺灣科技大學">國立臺灣科技大學</option>
+              <option value="國立雲林科技大學">國立雲林科技大學</option>
+              <option value="國立屏東科技大學">國立屏東科技大學</option>
+              <option value="國立臺北科技大學">國立臺北科技大學</option>
+              <option value="國立臺北藝術大學">國立臺北藝術大學</option>
+              <option value="國立臺灣藝術大學">國立臺灣藝術大學</option>
+              <option value="國立臺東大學">國立臺東大學</option>
+              <option value="國立宜蘭大學">國立宜蘭大學</option>
+              <option value="國立聯合大學">國立聯合大學</option>
+              <option value="國立虎尾科技大學">國立虎尾科技大學</option>
+              <option value="國立臺南藝術大學">國立臺南藝術大學</option>
+              <option value="國立臺南大學">國立臺南大學</option>
+              <option value="國立臺北教育大學">國立臺北教育大學</option>
+              <option value="國立臺中教育大學">國立臺中教育大學</option>
+              <option value="國立澎湖科技大學">國立澎湖科技大學</option>
+              <option value="國立勤益科技大學">國立勤益科技大學</option>
+              <option value="國立體育大學">國立體育大學</option>
+              <option value="國立臺北護理健康大學">國立臺北護理健康大學</option>
+              <option value="國立高雄餐旅大學">國立高雄餐旅大學</option>
+              <option value="國立金門大學">國立金門大學</option>
+              <option value="國立臺灣體育運動大學">國立臺灣體育運動大學</option>
+              <option value="國立臺中科技大學">國立臺中科技大學</option>
+              <option value="國立臺北商業大學">國立臺北商業大學</option>
+              <option value="國立屏東大學">國立屏東大學</option>
+              <option value="國立高雄科技大學">國立高雄科技大學</option>
+              <option value="國立臺灣戲曲學院">國立臺灣戲曲學院</option>
+              <option value="國立臺南護理專科學校">國立臺南護理專科學校</option>
+              <option value="國立臺東專科學校">國立臺東專科學校</option>
+              <option value="東海大學">東海大學</option>
+              <option value="輔仁大學">輔仁大學</option>
+              <option value="東吳大學">東吳大學</option>
+              <option value="中原大學">中原大學</option>
+              <option value="淡江大學學校財團法人淡江大學">淡江大學學校財團法人淡江大學</option>
+              <option value="中國文化大學">中國文化大學</option>
+              <option value="逢甲大學">逢甲大學</option>
+              <option value="靜宜大學">靜宜大學</option>
+              <option value="長庚大學">長庚大學</option>
+              <option value="元智大學">元智大學</option>
+              <option value="中華大學學校財團法人中華大學">中華大學學校財團法人中華大學</option>
+              <option value="大葉大學">大葉大學</option>
+              <option value="華梵大學">華梵大學</option>
+              <option value="義守大學">義守大學</option>
+              <option value="世新大學">世新大學</option>
+              <option value="銘傳大學">銘傳大學</option>
+              <option value="實踐大學">實踐大學</option>
+              <option value="朝陽科技大學">朝陽科技大學</option>
+              <option value="高雄醫學大學">高雄醫學大學</option>
+              <option value="南華大學">南華大學</option>
+              <option value="真理大學">真理大學</option>
+              <option value="大同大學">大同大學</option>
+              <option value="南臺學校財團法人南臺科技大學">南臺學校財團法人南臺科技大學</option>
+              <option value="崑山科技大學">崑山科技大學</option>
+              <option value="嘉藥學校財團法人嘉南藥理大學">嘉藥學校財團法人嘉南藥理大學</option>
+              <option value="樹德科技大學">樹德科技大學</option>
+              <option value="慈濟學校財團法人慈濟大學">慈濟學校財團法人慈濟大學</option>
+              <option value="臺北醫學大學">臺北醫學大學</option>
+              <option value="中山醫學大學">中山醫學大學</option>
+              <option value="龍華科技大學">龍華科技大學</option>
+              <option value="輔英科技大學">輔英科技大學</option>
+              <option value="明新學校財團法人明新科技大學">明新學校財團法人明新科技大學</option>
+              <option value="長榮大學">長榮大學</option>
+              <option value="弘光科技大學">弘光科技大學</option>
+              <option value="中國醫藥大學">中國醫藥大學</option>
+              <option value="健行學校財團法人健行科技大學">健行學校財團法人健行科技大學</option>
+              <option value="正修學校財團法人正修科技大學">正修學校財團法人正修科技大學</option>
+              <option value="萬能學校財團法人萬能科技大學">萬能學校財團法人萬能科技大學</option>
+              <option value="玄奘大學">玄奘大學</option>
+              <option value="建國科技大學">建國科技大學</option>
+              <option value="明志科技大學">明志科技大學</option>
+              <option value="高苑科技大學">高苑科技大學</option>
+              <option value="大仁科技大學">大仁科技大學</option>
+              <option value="聖約翰科技大學">聖約翰科技大學</option>
+              <option value="嶺東科技大學">嶺東科技大學</option>
+              <option value="中國科技大學">中國科技大學</option>
+              <option value="中臺科技大學">中臺科技大學</option>
+              <option value="亞洲大學">亞洲大學</option>
+              <option value="開南大學">開南大學</option>
+              <option value="佛光大學">佛光大學</option>
+              <option value="台南家專學校財團法人台南應用科技大學">台南家專學校財團法人台南應用科技大學</option>
+              <option value="遠東科技大學">遠東科技大學</option>
+              <option value="光宇學校財團法人元培醫事科技大學">光宇學校財團法人元培醫事科技大學</option>
+              <option value="景文科技大學">景文科技大學</option>
+              <option value="中華醫事科技大學">中華醫事科技大學</option>
+              <option value="東南科技大學">東南科技大學</option>
+              <option value="德明財經科技大學">德明財經科技大學</option>
+              <option value="明道學校財團法人明道大學">明道學校財團法人明道大學</option>
+              <option value="南開科技大學">南開科技大學</option>
+              <option value="中華學校財團法人中華科技大學">中華學校財團法人中華科技大學</option>
+              <option value="僑光科技大學">僑光科技大學</option>
+              <option value="廣亞學校財團法人育達科技大學">廣亞學校財團法人育達科技大學</option>
+              <option value="美和學校財團法人美和科技大學">美和學校財團法人美和科技大學</option>
+              <option value="吳鳳科技大學">吳鳳科技大學</option>
+              <option value="環球學校財團法人環球科技大學">環球學校財團法人環球科技大學</option>
+              <option value="台灣首府學校財團法人台灣首府大學">台灣首府學校財團法人台灣首府大學</option>
+              <option value="中州學校財團法人中州科技大學">中州學校財團法人中州科技大學</option>
+              <option value="修平學校財團法人修平科技大學">修平學校財團法人修平科技大學</option>
+              <option value="長庚學校財團法人長庚科技大學">長庚學校財團法人長庚科技大學</option>
+              <option value="城市學校財團法人臺北城市科技大學">城市學校財團法人臺北城市科技大學</option>
+              <option value="大華學校財團法人敏實科技大學">大華學校財團法人敏實科技大學</option>
+              <option value="醒吾學校財團法人醒吾科技大學">醒吾學校財團法人醒吾科技大學</option>
+              <option value="文藻學校財團法人文藻外語大學">文藻學校財團法人文藻外語大學</option>
+              <option value="華夏學校財團法人華夏科技大學">華夏學校財團法人華夏科技大學</option>
+              <option value="慈濟學校財團法人慈濟科技大學">慈濟學校財團法人慈濟科技大學</option>
+              <option value="致理學校財團法人致理科技大學">致理學校財團法人致理科技大學</option>
+              <option value="康寧學校財團法人康寧大學">康寧學校財團法人康寧大學</option>
+              <option value="宏國學校財團法人宏國德霖科技大學">宏國學校財團法人宏國德霖科技大學</option>
+              <option value="東方學校財團法人東方設計大學">東方學校財團法人東方設計大學</option>
+              <option value="崇右學校財團法人崇右影藝科技大學">崇右學校財團法人崇右影藝科技大學</option>
+              <option value="台北海洋學校財團法人台北海洋科技大學">台北海洋學校財團法人台北海洋科技大學</option>
+              <option value="亞東學校財團法人亞東科技大學">亞東學校財團法人亞東科技大學</option>
+              <option value="中信學校財團法人中信金融管理學院">中信學校財團法人中信金融管理學院</option>
+              <option value="大漢技術學院">大漢技術學院</option>
+              <option value="和春技術學院">和春技術學院</option>
+              <option value="南亞科技學校財團法人南亞技術學院">南亞科技學校財團法人南亞技術學院</option>
+              <option value="蘭陽技術學院">蘭陽技術學院</option>
+              <option value="黎明技術學院">黎明技術學院</option>
+              <option value="經國管理暨健康學院">經國管理暨健康學院</option>
+              <option value="大同技術學院">大同技術學院</option>
+              <option value="馬偕學校財團法人馬偕醫學院">馬偕學校財團法人馬偕醫學院</option>
+              <option value="法鼓學校財團法人法鼓文理學院">法鼓學校財團法人法鼓文理學院</option>
+              <option value="馬偕學校財團法人馬偕醫護管理專科學校">馬偕學校財團法人馬偕醫護管理專科學校</option>
+              <option value="仁德醫護管理專科學校">仁德醫護管理專科學校</option>
+              <option value="樹人醫護管理專科學校">樹人醫護管理專科學校</option>
+              <option value="慈惠醫護管理專科學校">慈惠醫護管理專科學校</option>
+              <option value="耕莘健康管理專科學校">耕莘健康管理專科學校</option>
+              <option value="敏惠醫護管理專科學校">敏惠醫護管理專科學校</option>
+              <option value="育英醫護管理專科學校">育英醫護管理專科學校</option>
+              <option value="聖母醫護管理專科學校">聖母醫護管理專科學校</option>
+              <option value="新生醫護管理專科學校">新生醫護管理專科學校</option>
+              <option value="崇仁醫護管理專科學校">崇仁醫護管理專科學校</option>
+              <option value="學校財團法人中華浸信會基督教台灣浸會神學院">學校財團法人中華浸信會基督教台灣浸會神學院</option>
+              <option value="臺北基督學院">臺北基督學院</option>
+              <option value="財團法人一貫道天皇基金會一貫道天皇學院">財團法人一貫道天皇基金會一貫道天皇學院</option>
+              <option value="台神學校財團法人台灣神學研究學院">台神學校財團法人台灣神學研究學院</option>
+              <option value="一貫道崇德學院">一貫道崇德學院</option>
+              <option value="台灣基督長老教會南神神學院">台灣基督長老教會南神神學院</option>
+              <option value="基督教華神學校財團法人中華福音神學研究學院">基督教華神學校財團法人中華福音神學研究學院</option>
+              <option value="唯心聖教學院">唯心聖教學院</option>
+              <option value="臺北市立大學">臺北市立大學</option>
+
+
+
+
+            </select>
+          </div>
+          
+   
+          <!-- 學校類別 
+          <div class="group">
+            <label class="title">日間學制學士班學雜費收費基準</label>
+            <div class="multi_select_box">
+              <select 
+               id="cate-selected"
+               name="program_category" 
+               class="form-control"
+              > 
+               <option>醫學系</option>
+               <option>牙醫學系</option>
+              </select>
+              <small class="form-text text-muted">請選擇學系 </small><br>
+            </div>
+          </div> 
+          -->
+
+          <!--熱門詞多少個?form group
+          <div class="group">
+            <label class="">多少個熱門詞?</label>
+            <div class="multi_select_box">
+              <input
+                id="topk-selected"
+                name="topk"
+                value="10"
+                class="form-control form-control-success"
+              />
+              <small class="form-text text-muted">內定值為10 </small>
+            </div>
+          </div>熱門-->
+       
+
+
+        </div>
+      
+        <button name="submit" style="margin-top:10px" class="btn btn-primary">查詢</button>
+      </form>
+      </div>
+      
+      <div class="Right">
+        <div class="form-group row">
+          <div class="col-md-9 ml-auto"><a href="http://127.0.0.1:8000/tuition/" style="text-decoration:none" >
+            <button type="button" id="btn-ok" class="btn btn-primary">
+              圖表
+            </button>
+          </div></a>
+        </div>
+
+
+      
+
+      </div> <!--Right-->
+    </div>
+  </section>
+
+>>>>>>> 52e41831cbbdd8634ae2e5eafac004b70f2f4a90
 
 
 
@@ -272,6 +553,7 @@
 
   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+<<<<<<< HEAD
   <script type="module" src="ionicons.js"></script>
   <script nomodule src="ionicons.esm.js"></script>
 
@@ -280,6 +562,8 @@
   <script src="js/bootstrap-select.min.js"></script>
 
   <script src="js/script.js"></script>
+=======
+>>>>>>> 52e41831cbbdd8634ae2e5eafac004b70f2f4a90
 
 
   <script>
@@ -365,5 +649,128 @@
   </script>
 
 </body>
+<<<<<<< HEAD
 
 </html>
+=======
+</html>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.min.js"></script>
+  
+<script>
+    
+    callAjax();
+
+    $('#cate-selected').on('change', function () {
+      callAjax();
+    }); //event function
+
+    $('#btn-ok').on('click', function () {
+      callAjax();
+    }); //event function
+
+    function callAjax() {
+        let cate = $('#cate-selected').val();
+        //console.log(topk);
+        
+        let topk = $('#topk-selected').val();
+        //console.log(topk);
+
+        $.ajax({
+            type: "POST",
+
+            url: "/tuition/api_get_year_tuition/",
+
+            data: {
+                "program_category": cate,
+                "topk": topk
+            },
+            success: function (received) {
+                //console.log(received);
+                let chart_data = received.chart_data;
+                let wf_pairs = received.wf_pairs;
+                console.log(wf_pairs)
+                showTopKeys(wf_pairs);
+                showChart(chart_data);
+            } //success function
+        }); //ajax
+    } //callAjax
+
+    //* 顯示關鍵詞資料函數
+    function showTopKeys(items) {
+        //先清除前一次的資料
+        $('#tokeys').empty();
+
+        //將內容加上li標籤附加起來，顯示在顯示區"fees"
+        for (let i = 0; i < items.length; i++) {
+            let item_li = "<li>" + items[i] + "</li>";
+            $('#topkeys').append(item_li);
+        }
+    } //function
+
+    //**繪圖函數showChart()
+    function showChart(chart_data) {
+
+        // 畫圖需要的數據資料
+        let values = chart_data.values;
+        let labels = chart_data.labels;
+        let category = chart_data.category;
+
+        //第1個變數: 餵給chart的資料
+        let data = {
+            labels: labels,
+            datasets: [{
+                label: category,
+                data: values,
+                backgroundColor: randomColors(values.length),
+                borderColor: randomColors(values.length),
+                borderWidth: 1,
+            }],
+        };
+
+        //第2個變數: chart的選項  指定y坐標軸從零開始顯示
+        let options = {
+            scales: {
+                yAxes: [{
+                    ticks: {
+                        beginAtZero: true
+                    }
+                }]
+            },
+        };
+
+        //取得在前面html區域欲顯示的圖代號
+        let canvas_mychrat = document.getElementById("mychart");
+
+        if (window.barchart) {
+            barchart.destroy();
+        }
+
+        barchart = new Chart(canvas_mychrat, {
+            type: 'bar',
+            data: data,
+            options: options,
+        });
+
+
+        //** 產生隨機顏色
+        function randomColors(num_colors) {
+            let colors = [];
+
+            for (i = 0; i < num_colors; i++) {
+
+                let r = Math.floor(Math.random() * 255);
+                let g = Math.floor(Math.random() * 255);
+                let b = Math.floor(Math.random() * 255);
+                let rgb = `rgba(${r},${g},${b},0.5)` // (red, green, blue, alfa) alfa透明度
+
+                colors.push(rgb);
+            }
+            return colors;
+        }
+
+
+    }
+
+</script>
+>>>>>>> 52e41831cbbdd8634ae2e5eafac004b70f2f4a90
