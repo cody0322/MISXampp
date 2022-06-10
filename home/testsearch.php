@@ -5,7 +5,7 @@
     <div class="content">
         <div class="toolbar">
             <a href="home.html"><button id="alertBtn" class="btn">返回首頁</button></a>
-            <a href=""><button id="alertBtn" class="btn">圖表</button></a>
+            <a href="http://127.0.0.1:8000/tuition/"><button id="alertBtn" class="btn">圖表</button></a>
         </div>
 
             
